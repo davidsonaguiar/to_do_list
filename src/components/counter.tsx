@@ -1,4 +1,4 @@
-import {useTaskContext} from "../context/use-task-context.ts";
+import {useTaskContext} from "../hooks/use-task-context.ts";
 
 function Counter() {
     const {taskLength, tasksDone} = useTaskContext();

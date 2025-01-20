@@ -1,7 +1,7 @@
 import InputText from "./InputText.tsx";
 import Button from "./button.tsx";
 import {PlusCircleIcon} from "@heroicons/react/24/outline";
-import {useTaskContext} from "../context/use-task-context.ts";
+import {useTaskContext} from "../hooks/use-task-context.ts";
 import {ChangeEvent, FormEvent, useState} from "react";
 import {CreateTaskValidation} from "../validation/create-task-validation.ts";
 

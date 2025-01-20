@@ -1,9 +1,11 @@
 import {ReactNode, useEffect, useState} from "react";
-import {TaskContext} from "./task-context.ts";
+import {TaskContext} from "../context/task-context.ts";
 import {Task} from "../models/Task.ts";
 import {nanoid as UUID} from "nanoid";
+import useToast from "../hooks/use-toast.ts";
 
 export function TaskContextProvider(props: { children: ReactNode}) {
+    const toast = useToast();
     const [tasks, setTasks] = useState<Task[]>([]);
     const tasksDone = tasks.filter(task => task.status).length;
     const taskLength = tasks.length;
@@ -24,7 +26,7 @@ export function TaskContextProvider(props: { children: ReactNode}) {
 
     function create(name: string) {
         const taskExists = tasks.find(task => task.name === name);
-        if(taskExists) throw new Error("Tarefa ja cadastrada.");
+        if(taskExists) return toast.error("Tarefa ja cadastrada.");
 
         const newTasks = [
             ...tasks,

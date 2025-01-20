@@ -4,7 +4,7 @@ import Button from "./button.tsx";
 import {TrashIcon} from "@heroicons/react/24/outline";
 import {Task} from "../models/Task.ts";
 import {ListVoid} from "./list-void.tsx";
-import {useTaskContext} from "../context/use-task-context.ts";
+import {useTaskContext} from "../hooks/use-task-context.ts";
 import {TaskItem} from "./task-item.tsx";
 
 export function TaskList() {

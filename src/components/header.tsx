@@ -6,7 +6,7 @@ export function Header() {
         <header
             className="
                 w-full h-[20vh] fixed top-0 left-0 bg-neutral-950
-                flex flex-col items-center justify-center z-50"
+                flex flex-col items-center justify-center z-10"
         >
             <Title />
             <CreateTaskForm />
